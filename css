@@ -1,0 +1,49 @@
+body {
+    background-color: rosybrown;
+}
+
+.heart-shape {
+    margin: 40vh auto;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: darkred;
+    transform: rotate(45deg);
+}
+
+.heart-shape:before,
+.heart-shape:after{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    content: ' ';
+    border-radius: 50%;
+    background-color: darkred;
+    transform: rotate(45deg);
+}
+
+.bounce {
+    animation: bounce 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+.heart-shape:before{
+    bottom: 0px;
+    left: -100px;
+}
+
+.heart-shape:after{
+    right: 0px;
+    top: -100px;
+}
+
+@keyframes bounce {
+    0%   { transform: scale(1,1)    translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1) translateY(-90px); }
+    50%  { transform: scale(1,1)    translateY(0); }
+    57%  { transform: scale(1,1)    translateY(-7px); }
+    64%  { transform: scale(1,1)    translateY(0); }
+    100% { transform: scale(1,1)    translateY(0); }
+}
